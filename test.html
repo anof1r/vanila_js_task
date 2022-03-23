@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrange Box</title>
+    <link rel="stylesheet" href="testStyle.css">
+</head>
+<script type="text/javascript" src="main.js"></script>
+<body onload="createListOfItems(),createListOfSelectedItems()">
+    <div class="card">
+        <div class="p-component">
+            <div class="pick-list-wrapper">
+                <div class="pick-list-header">
+                    <div>All Items</div>
+                </div>
+                <div class="search-place">
+                    <div class="pick-list-search">
+                        <input type="text" placeholder="Search" class="search"></input>
+                    </div>
+                </div>
+                <div id="itemsContainer"></div>
+                <div class="buttons">
+                    <button onclick="moveItemDown()">↓</button>
+                    <button onclick="moveItemUp()">↑</button>
+                    <button onclick="addSelectedItem()">→</button>
+                    <button onclick="addAllItems()">→→</button>
+                </div>
+            </div>
+
+            <div class="items-list-wrapper">
+                <div class="items-list-header">
+                    <div>Selected Items</div>
+                </div>
+                <div class="search-place">
+                    <div class="pick-list-search">
+                        <input type="text" placeholder="Search" class="search"></input>
+                    </div>
+                </div>
+                <div id="selectedItemsContainer"></div>
+                <div class="buttons">
+                    <button>↓</button>
+                    <button>↑</button>
+                    <button onclick="removeSelectedItem()">←</button>
+                    <button onclick="selectedItemsRollBack()">←←</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            const itemsContainer = document.getElementById('itemsContainer')
+            const SelectedItemsContainer = document.getElementById('selectedItemsContainer')
+            if(itemsContainer) itemsContainer.addEventListener("click",itemClickHandler)
+            if(SelectedItemsContainer) SelectedItemsContainer.addEventListener("click",itemClickHandler)
+        </script>
+</body>
+
+</html>
