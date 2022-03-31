@@ -9,15 +9,15 @@
 .ul-style{
     border: 1px solid #343a40;
     list-style: none;
-    overflow:hidden; 
+    overflow:hidden;
     overflow-y:scroll;
     height: 50vh;
     padding-left: 20px;
     padding-right: 20px;
 }
 .ul-style li{
-    padding-left: 70px; margin:5px 5px;height: 70px; 
-    line-height: 70px; 
+    padding-left: 70px; margin:5px 5px;height: 70px;
+    line-height: 70px;
     border: solid 1px
 }
 .ul-space{
@@ -40,11 +40,11 @@
     padding: 10px;
 }
 .search{
-    border-color:#cccccc; 
-    background-color:#ffffff; 
-    box-shadow: 0px 0px 5px 0px rgba(42,42,42,.75); 
-    border-width:0px; border-radius:8px; 
-    border-style:solid; text-align:center; 
+    border-color:#cccccc;
+    background-color:#ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(42,42,42,.75);
+    border-width:0px; border-radius:8px;
+    border-style:solid; text-align:center;
     font-size:19px; padding:6px;
 }
 .pick-list-header{

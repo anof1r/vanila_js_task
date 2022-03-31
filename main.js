@@ -203,6 +203,29 @@ function swapIndexesDown(allItems, position) {
 	return allItems;
 }
 
+function searchItems(str) {
+	const foundItem = allItems.find((item) => str.toString() === item.title.toLowerCase());
+	let allLis = allItems.map((item) => document.getElementById(item.id));
+	const ul = document.getElementById('itemsList');
+	const foundLi = allLis.find((item) => foundItem.id === item.id);
+	const searcResult = allLis.filter((item) => {
+		if (item != foundLi) {
+			item.setAttribute('style', 'display:none');
+		}
+	});
+	console.log(searcResult);
+	searcResult.forEach((item) => {
+		ul.removeChild(item.cloneNode(true));
+		item.remove();
+	});
+}
+
+function applyDefaultSettings() {
+	const ul = document.getElementById('itemsList');
+	ul.remove();
+	createListOfItems();
+}
+
 function itemClickHandler(event) {
 	if (event.target.classList.contains('li')) {
 		event.target.classList.toggle('active');
