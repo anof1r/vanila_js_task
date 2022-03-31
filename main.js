@@ -2,49 +2,49 @@
 let rightSideItems = [];
 let allItems = [{
 	id: '0',
-	img: 'tv.png',
+	img: 'images/tv.png',
 	title: 'TV',
 	selected: false
 },
 {
 	id: '1',
-	img: 'vacuum.png',
+	img: 'images/vacuum.png',
 	title: 'Vacuum cleaner',
 	selected: false
 },
 {
 	id: '2',
-	img: 'monitor.png',
+	img: 'images/monitor.png',
 	title: 'Display',
 	selected: false
 },
 {
 	id: '3',
-	img: 'lamp.png',
+	img: 'images/lamp.png',
 	title: 'Lamp',
 	selected: false
 },
 {
 	id: '4',
-	img: 'mic.png',
+	img: 'images/mic.png',
 	title: 'Microphone',
 	selected: false
 },
 {
 	id: '5',
-	img: 'cpu.png',
+	img: 'images/cpu.png',
 	title: 'CPU',
 	selected: false
 },
 {
 	id: '6',
-	img: 'mouse.png',
+	img: 'images/mouse.png',
 	title: 'Mouse',
 	selected: false
 },
 {
 	id: '7',
-	img: 'headset.png',
+	img: 'images/headset.png',
 	title: 'Headset',
 	selected: false
 }];
