@@ -30,6 +30,8 @@ module.exports = {
 		'object-curly-newline': ['error',{ 'consistent': true }],
 		'no-multi-spaces': 'error',
 		'quotes': ['error', 'single'],
-		'camelcase': 'error'
+		'camelcase': 'error',
+		'space-before-blocks': 'error',
+		'no-var': 'error'
 	}
 };
