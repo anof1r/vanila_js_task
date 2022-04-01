@@ -205,28 +205,15 @@ function swapIndexesDown(allItems, position) {
 
 function searchItems(e) {
 	const reg = new RegExp(e.target.value, 'i');
-	let allLis = allItems.map((item) => document.getElementById(item.id));
-	allItems.map((item) => {
+	const allLis = allItems.map((item) => document.getElementById(item.id));
+	allItems.forEach((item) => {
+		const foundLi = allLis.find((li) => li.id === item.id);
 		if (reg.test(item.title)) {
-			allLis.map((li) => {
-				if(li.id === item.id) {
-					if (li.classList.contains('display: none')) {
-						li.classList.toggle('display');
-					}
-				}
-			});
+			foundLi.style.display = 'list-item';
 			console.log(item);
 		} else {
-			allLis.map((li) => {
-				if(li.id === item.id) {
-					li.setAttribute('style','display: none');
-				}
-			});
+			foundLi.style.display = 'none';
 		}
-		if (e.target.value === '') {
-			allLis.map((li) => li.setAttribute('style','display: block'));
-		}
-		return item;
 	});
 }
 
