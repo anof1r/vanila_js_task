@@ -17,7 +17,7 @@
                 </div>
                 <div class="search-place">
                     <div class="pick-list-search">
-                        <input type="text" id="search" placeholder="Search" class="search" onkeypress="searchItems(getElementById('search').value.toLowerCase())">
+                        <input type="text" id="search" placeholder="Search" class="search">
                     </div>
                 </div>
                 <div id="itemsContainer"></div>
@@ -53,8 +53,7 @@
             const SelectedItemsContainer = document.getElementById('selectedItemsContainer')
             if(itemsContainer) itemsContainer.addEventListener("click",itemClickHandler)
             if(SelectedItemsContainer) SelectedItemsContainer.addEventListener("click",itemClickHandler)
-
-
+            document.getElementById('search').addEventListener('input',((e)=>searchItems(e)))
         </script>
 </body>
 

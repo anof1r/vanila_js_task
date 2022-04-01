@@ -2,49 +2,49 @@
 let rightSideItems = [];
 let allItems = [{
 	id: '0',
-	img: 'tv.png',
+	img: 'images/tv.png',
 	title: 'TV',
 	selected: false
 },
 {
 	id: '1',
-	img: 'vacuum.png',
+	img: 'images/vacuum.png',
 	title: 'Vacuum cleaner',
 	selected: false
 },
 {
 	id: '2',
-	img: 'monitor.png',
+	img: 'images/monitor.png',
 	title: 'Display',
 	selected: false
 },
 {
 	id: '3',
-	img: 'lamp.png',
+	img: 'images/lamp.png',
 	title: 'Lamp',
 	selected: false
 },
 {
 	id: '4',
-	img: 'mic.png',
+	img: 'images/mic.png',
 	title: 'Microphone',
 	selected: false
 },
 {
 	id: '5',
-	img: 'cpu.png',
+	img: 'images/cpu.png',
 	title: 'CPU',
 	selected: false
 },
 {
 	id: '6',
-	img: 'mouse.png',
+	img: 'images/mouse.png',
 	title: 'Mouse',
 	selected: false
 },
 {
 	id: '7',
-	img: 'headset.png',
+	img: 'images/headset.png',
 	title: 'Headset',
 	selected: false
 }];
@@ -203,20 +203,30 @@ function swapIndexesDown(allItems, position) {
 	return allItems;
 }
 
-function searchItems(str) {
-	const foundItem = allItems.find((item) => str.toString() === item.title.toLowerCase());
+function searchItems(e) {
+	const reg = new RegExp(e.target.value, 'i');
 	let allLis = allItems.map((item) => document.getElementById(item.id));
-	const ul = document.getElementById('itemsList');
-	const foundLi = allLis.find((item) => foundItem.id === item.id);
-	const searcResult = allLis.filter((item) => {
-		if (item != foundLi) {
-			item.setAttribute('style', 'display:none');
+	allItems.map((item) => {
+		if (reg.test(item.title)) {
+			allLis.map((li) => {
+				if(li.id === item.id) {
+					if (li.classList.contains('display: none')) {
+						li.classList.toggle('display');
+					}
+				}
+			});
+			console.log(item);
+		} else {
+			allLis.map((li) => {
+				if(li.id === item.id) {
+					li.setAttribute('style','display: none');
+				}
+			});
 		}
-	});
-	console.log(searcResult);
-	searcResult.forEach((item) => {
-		ul.removeChild(item.cloneNode(true));
-		item.remove();
+		if (e.target.value === '') {
+			allLis.map((li) => li.setAttribute('style','display: block'));
+		}
+		return item;
 	});
 }
 
