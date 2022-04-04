@@ -1,4 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from os import curdir, sep
 
 class Serv(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -9,8 +10,15 @@ class Serv(BaseHTTPRequestHandler):
             self.send_response(200)
         except:
             file_to_open = "File not found =("
-            self.send_response(404)
-
+            #self.send_response(404)
+        if self.path.endswith(".png"):
+                            f = open(curdir + sep + self.path, 'rb')
+                            self.send_response(200)
+                            self.send_header('Content-type','/png')
+                            self.end_headers()
+                            self.wfile.write(f.read())
+                            f.close()
+                            return
         self.end_headers()
         self.wfile.write(bytes(file_to_open, 'utf-8'))
 
