@@ -1,7 +1,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from os import curdir, sep
 
-class Serv(BaseHTTPRequestHandler):
+class Server(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
             self.path = '/test.html'
@@ -23,5 +23,5 @@ class Serv(BaseHTTPRequestHandler):
         self.wfile.write(bytes(file_to_open, 'utf-8'))
 
 
-httpd = HTTPServer(('localhost', 2000), Serv)
+httpd = HTTPServer(('localhost', 2000), Server)
 httpd.serve_forever()
